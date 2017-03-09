@@ -98,7 +98,7 @@ class MonoalphabeticTest(unittest.TestCase):
             if self.largePlain[iii] == plain[iii]:
                 count += 1
 
-        self.assertTrue(count * 100 / self.largePlain.Length > 70)
+        self.assertTrue(count * 100 / len(self.largePlain) > 70)
 
     def test_MonoTestNewEnc(self):
         algorithm = Monoalphabetic()
