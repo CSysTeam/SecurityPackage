@@ -118,7 +118,7 @@ class MonoalphabeticTest(unittest.TestCase):
         algorithm = Monoalphabetic()
         key = algorithm.analyse(self.newPlain, self.newCipher)
         self.assertEqual(len(key), 26)
-        self.assertEqual(len(set(Char)), 26)
+        self.assertEqual(len(set(key)), 26)
 
         self.assertTrue(Regex.match(regex, key))
 
