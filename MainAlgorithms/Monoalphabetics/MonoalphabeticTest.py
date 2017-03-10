@@ -93,6 +93,8 @@ class MonoalphabeticTest(unittest.TestCase):
         algorithm = Monoalphabetic()
         plain = algorithm.analyseUsingCharFrequency(self.largeCipher)
 
+        plain = plain.lower()
+
         count = 0
         for iii in range(0, len(self.largePlain)):
             if self.largePlain[iii] == plain[iii]:
