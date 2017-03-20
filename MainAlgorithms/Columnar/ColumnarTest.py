@@ -21,7 +21,7 @@ class ColumnarTest(unittest.TestCase):
     mainkey2 = [ 1, 4, 3, 2 ]
 
     newPlain = "defendtheeastwallofthecastleee"
-    newCipher = "nalceehwttdttfseeleedsoaefeahl"
+    newCipher = "nalceehwttdttfseeleedsoaefeahl".upper()
 
     newKey = [ 3, 2, 6, 4, 1, 5 ]
 
@@ -29,21 +29,21 @@ class ColumnarTest(unittest.TestCase):
         algorithm = Columnar()
         cipher = algorithm.Encrypt(self.mainPlain1, self.mainkey)
         # Add x's or not
-        self.assertTrue(cipher == self.mainCipher1 or cipher == self.mainCipher2)
+        self.assertTrue((cipher == self.mainCipher1) or (cipher == self.mainCipher2))
 
     def test_ColumnarTestDec1(self):
         algorithm = Columnar()
         plain1 = algorithm.Decrypt(self.mainCipher1, self.mainkey)
         plain2 = algorithm.Decrypt(self.mainCipher2, self.mainkey)
 
-        self.assertTrue(plain1 == self.mainPlain1 or plain2 == self.mainPlain2)
+        self.assertTrue((plain1 == self.mainPlain1) or (plain2 == self.mainPlain2))
 
     def test_ColumnarTestAnalysis1(self):
         algorithm = Columnar()
         key1 = algorithm.Analyse(self.mainPlain1, self.mainCipher1)
         key2 = algorithm.Analyse(self.mainPlain2, self.mainCipher2)
         for i in range(len(self.mainkey)):
-            self.assertTrue(self.mainkey[i] == key1[i] or self.mainkey[i] == key2[i])
+            self.assertTrue((self.mainkey[i] == key1[i]) or (self.mainkey[i] == key2[i]))
 
     def test_ColumnarTestEnc2(self):
         algorithm = Columnar()
@@ -53,8 +53,8 @@ class ColumnarTest(unittest.TestCase):
     def test_ColumnarTestEnc3(self):
         algorithm = Columnar()
         cipher = algorithm.Encrypt(self.mainPlain3, self.mainkey2)
+        self.assertTrue((cipher == self.mainCipher4) or (cipher == self.mainCipher5))
 
-        self.assertTrue(cipher == self.mainCipher4 or cipher == self.mainCipher5)
     def test_ColumnarTestDec2(self):
         algorithm = Columnar()
         plain = algorithm.Decrypt(self.mainCipher3, self.mainkey1)
@@ -64,7 +64,7 @@ class ColumnarTest(unittest.TestCase):
         algorithm = Columnar()
         plain1 = algorithm.Decrypt(self.mainCipher4, self.mainkey2)
         plain2 = algorithm.Decrypt(self.mainCipher5, self.mainkey2)
-        self.assertTrue(plain1 ==  self.mainPlain3 or plain2 == self.mainPlain4)
+        self.assertTrue((plain1 ==  self.mainPlain3) or (plain2 == self.mainPlain4))
 
     def test_ColumnarTestAnalysis2(self):
         algorithm = Columnar()
@@ -79,7 +79,7 @@ class ColumnarTest(unittest.TestCase):
         key2 = algorithm.Analyse(self.mainPlain4, self.mainCipher5)
 
         for i in range(len(self.mainkey2)):
-            self.assertTrue(self.mainkey2[i] == key1[i] or self.mainkey2[i] == key2[i])
+            self.assertTrue((self.mainkey2[i] == key1[i]) or (self.mainkey2[i] == key2[i]))
 
     def test_ColumnarNewTestEnc(self):
         algorithm = Columnar()
