@@ -103,57 +103,57 @@ class HillCipherTest(unittest.TestCase):
     def test_HillCipherTestEnc1(self):
         algorithm = HillCipher()
         cipher = algorithm.Encrypt(self.mainPlain, self.mainKey)
-        self.assertEqual(self.cipher, self.mainCipher)
+        self.assertEqual(cipher, self.mainCipher)
 
     def test_HillCipherTestDec1(self):
         algorithm = HillCipher()
         plain = algorithm.Decrypt(self.mainCipher, self.mainKey)
-        self.assertEqual(self.plain, self.mainPlain)
+        self.assertEqual(plain, self.mainPlain)
 
     def test_HillCipherTest2By2Analysis1(self):
         algorithm = HillCipher()
         key = algorithm.Analyse(self.mainPlain, self.mainCipher)
-        self.assertEqual(self.key, self.mainKey)
+        self.assertEqual(key, self.mainKey)
 
     def test_HillCipherTestEnc3(self):
         algorithm = HillCipher()
         cipher = algorithm.Encrypt(self.mainPlain, self.keyS3)
-        self.assertEqual(self.cipher, self.cipherS3)
+        self.assertEqual(cipher, self.cipherS3)
 
     def test_HillCipherTestDec3(self):
         algorithm = HillCipher()
         plain = algorithm.Decrypt(self.cipherS3, self.keyS3)
-        self.assertEqual(self.plain, self.mainPlain)
+        self.assertEqual(plain, self.mainPlain)
 
     def test_HillCipherTestEnc5(self):
         algorithm = HillCipher()
         cipher = algorithm.Encrypt(self.mainPlain3, self.mainKey3)
-        self.assertEqual(self.cipher, self.mainCipher3)
+        self.assertEqual(cipher, self.mainCipher3)
 
     def test_HillCipherTestDec5(self):
         algorithm = HillCipher()
         plain = algorithm.Decrypt(self.mainCipher3, self.mainKey3)
-        self.assertEqual(self.plain, self.mainPlain3)
+        self.assertEqual(plain, self.mainPlain3)
 
     def test_HillCipherTest3By3Analysis1(self):
         algorithm = HillCipher()
         key = algorithm.Analyse3By3Key(self.mainPlain3, self.mainCipher3)
-        self.assertEqual(self.key, self.mainKey3)
+        self.assertEqual(key, self.mainKey3)
 
     def test_HillCipherTestNewEnc(self):
         algorithm = HillCipher()
         cipher = algorithm.Encrypt(self.newPlain, self.newKey)
-        self.assertEqual(self.cipher, self.newCipher)
+        self.assertEqual(cipher, self.newCipher)
 
     def test_HillCipherTestNewDec(self):
         algorithm = HillCipher()
         plain = algorithm.Decrypt(self.newCipher, self.newKey)
-        self.assertEqual(self.plain, self.newPlain)
+        self.assertEqual(plain, self.newPlain)
 
     def test_HillCipherTestNew2By2Analysis(self):
         algorithm = HillCipher()
         key = algorithm.Analyse(self.newPlain, self.newCipher)
-        self.assertEqual(self.key, self.newKey)
+        self.assertEqual(key, self.newKey)
 
     #endregion
 
@@ -186,7 +186,7 @@ class HillCipherTest(unittest.TestCase):
     def test_HillCipherError4(self):
         algorithm = HillCipher()
         key = algorithm.Analyse3By3Key(self.mainPlain, self.cipherS3)
-        self.assertEqual(self.key, self.keyS3)
+        self.assertEqual(key, self.keyS3)
 
     #endregion        
 
