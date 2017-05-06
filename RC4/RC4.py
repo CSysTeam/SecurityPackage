@@ -1,5 +1,5 @@
 class RC4:
-    def Encrypt(self, plainText, key):
+    def Encrypt(self, plaintext, key):
         #raise NotImplementedError
         K = key
         T = ""
