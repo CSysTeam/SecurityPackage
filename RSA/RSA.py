@@ -4,7 +4,6 @@ class RSA:
     def Encrypt(self, p: int, q: int, M: int, e: int) -> int:
         #raise NotImplementedError
         n = p * q
-        totient = (p - 1) * (q - 1)
         C = (M ** e) % n
         return int(C)
 
