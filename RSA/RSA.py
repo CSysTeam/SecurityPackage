@@ -2,7 +2,11 @@ import math
 
 class RSA:
     def Encrypt(self, p: int, q: int, M: int, e: int) -> int:
-        raise NotImplementedError
+        #raise NotImplementedError
+        n = p * q
+        totient = (p - 1) * (q - 1)
+        C = (M ** e) % n
+        return int(C)
 
     def Decrypt(self, p: int, q: int, C: int, e: int) -> int:
         #raise NotImplementedError
